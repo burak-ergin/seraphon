@@ -203,8 +203,8 @@
   .toc-list { list-style: none; margin: 0; padding: 0; }
   .toc-row {
     display: flex;
-    align-items: baseline;
-    gap: 14px;
+    align-items: center; /* Görseller için ortalandı */
+    gap: 16px;
     padding: 26px 0;
     border-bottom: 1px solid rgba(35, 16, 58, 0.14);
   }
@@ -217,6 +217,17 @@
     width: 34px;
     flex-shrink: 0;
   }
+  
+  /* Kitap kapağı thumbnail stili */
+  .toc-thumb {
+    width: 46px;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 4px 12px rgba(35, 16, 58, 0.18);
+    flex-shrink: 0;
+    display: block;
+  }
+
   .toc-title-block { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
   .toc-title {
     font-family: var(--font-display);
@@ -249,7 +260,7 @@
   .toc-status.soon { color: var(--ink-muted); font-weight: 500; }
 
   @media (max-width: 620px) {
-    .toc-row { flex-wrap: wrap; }
+    .toc-row { flex-wrap: wrap; align-items: flex-start; }
     .toc-leader { display: none; }
     .toc-title-block { flex-direction: column; gap: 2px; }
   }
@@ -408,11 +419,12 @@
 <section id="catalog">
   <div class="wrap">
     <div class="eyebrow"><span class="blot blot-eyebrow" aria-hidden="true"></span>THE CATALOG</div>
-    <h2>Three books, in order of publication.</h2>
+    <h2>Our Latest Books.</h2>
 
     <ol class="toc-list">
       <li class="toc-row">
         <span class="toc-num">I.</span>
+        <img src="crime.jpg" alt="Crime and Punishment" class="toc-thumb">
         <div class="toc-title-block">
           <span class="toc-title">Crime and Punishment</span>
           <span class="toc-author">Fyodor Dostoevsky</span>
@@ -422,6 +434,7 @@
       </li>
       <li class="toc-row">
         <span class="toc-num">II.</span>
+        <img src="ivan.jpg" alt="The Death of Ivan Ilyich" class="toc-thumb">
         <div class="toc-title-block">
           <span class="toc-title">The Death of Ivan Ilyich</span>
           <span class="toc-author">Leo Tolstoy</span>
@@ -431,6 +444,7 @@
       </li>
       <li class="toc-row">
         <span class="toc-num">III.</span>
+        <img src="dorian.jpg" alt="The Picture of Dorian Gray" class="toc-thumb">
         <div class="toc-title-block">
           <span class="toc-title">The Picture of Dorian Gray</span>
           <span class="toc-author">Oscar Wilde</span>
@@ -485,10 +499,10 @@
       2. Replace YOUR-USERNAME below (in the form action AND the onsubmit popup URL) with your Buttondown username.
       3. Double-check the exact embed snippet in your Buttondown dashboard (Settings → Embedding) in case their markup has changed.
     -->
-    <form action="https://buttondown.com/api/emails/embed-subscribe/seraphon"
+    <form action="https://buttondown.com/api/emails/embed-subscribe/ergin"
           method="post"
           target="popupwindow"
-          onsubmit="window.open('https://buttondown.com/seraphon', 'popupwindow')"
+          onsubmit="window.open('https://buttondown.com/ergin', 'popupwindow')"
           class="sub-form">
       <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
       <button type="submit">Subscribe</button>
