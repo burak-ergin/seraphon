@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seraphon Publishing — Enduring literature and essential nonfiction, edited with care</title>
+<title>Seraphon Publishing — Your Words. Global Reach.</title>
 <meta name="description" content="Seraphon Publishing publishes carefully edited editions of the world's most searching classics and essential nonfiction, for readers who take books seriously.">
 
 <meta property="og:title" content="Seraphon Publishing">
-<meta property="og:description" content="Enduring literature and essential nonfiction, edited with care.">
+<meta property="og:description" content="Your Words. Global Reach.">
 <meta property="og:type" content="website">
 
 <link rel="icon" type="image/png" href="seraphon-logo.png">
@@ -118,6 +118,7 @@
     gap: 28px;
     font-family: var(--font-ui);
     font-size: 0.92rem;
+    align-items: center;
   }
   nav.links a {
     color: var(--ink);
@@ -127,7 +128,23 @@
     border-bottom: 1px solid transparent;
     transition: border-color 0.15s ease, color 0.15s ease;
   }
-  nav.links a:hover { color: var(--violet); border-color: var(--violet); }
+  nav.links a:not(.contact-btn):hover { color: var(--violet); border-color: var(--violet); }
+
+  /* ---------- Contact Button ---------- */
+  nav.links a.contact-btn {
+    background: var(--ink);
+    color: var(--cream-pale);
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+    border-bottom: none;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  nav.links a.contact-btn:hover {
+    background: var(--violet);
+    color: var(--cream-pale);
+  }
 
   /* ---------- Eyebrow / section labels ---------- */
   .eyebrow {
@@ -400,6 +417,7 @@
       <a href="#catalog">Catalog</a>
       <a href="#about">About</a>
       <a href="#newsletter">Newsletter</a>
+      <a href="mailto:contact@seraphon.org" class="contact-btn">Contact</a>
     </nav>
   </div>
 </header>
@@ -408,8 +426,8 @@
   <span class="blot" aria-hidden="true"></span>
   <div class="hero-content">
     <div class="eyebrow"><span class="blot blot-eyebrow" aria-hidden="true"></span>SERAPHON PUBLISHING</div>
-    <h1 class="hero-title">Enduring literature and<br>essential nonfiction, edited with care.</h1>
-    <p class="hero-sub">A small press bringing the world's most searching classics back into print, alongside carefully chosen nonfiction — formatted, introduced, and built for readers who take books seriously.</p>
+    <h1 class="hero-title">Your Words. Global Reach.</h1>
+    <p class="hero-sub">"Expand your legacy beyond borders. From world-class translation to flawless formatting, we prepare your masterpiece for global distribution."</p>
     <a href="#catalog" class="hero-scroll">View the catalog ↓</a>
   </div>
 </section>
@@ -479,9 +497,9 @@
     <div class="eyebrow"><span class="blot blot-eyebrow" aria-hidden="true"></span>ABOUT</div>
     <h2>Why Seraphon Publishing</h2>
     <div class="about-body">
-      <p>Seraphon Publishing publishes the books that don't let readers look away — enduring classics and essential nonfiction alike, chosen because they ask a real question and refuse to answer it neatly.</p>
-      <p>Each edition, whether a classic returning to print or a new nonfiction title, is formatted and typeset for a clean, modern e-reader: a linked table of contents, considered typography, and a short introduction to place the book in context — nothing more, nothing less.</p>
-      <p>We publish rarely. Every title has to earn its place on the list before we take on the next.</p>
+      <p>Seraphon Publishing exists to take compelling stories beyond their original borders. We publish contemporary fiction and essential nonfiction that refuse to let readers look away.</p>
+      <p>We treat every project as a masterpiece. From world-class translation to pristine formatting, each edition is crafted for the modern reader with a clean layout and considered typography.</p>
+      <p>We publish selectively. By keeping our list highly curated, we guarantee that every author receives the uncompromising attention their work deserves to succeed on the global stage.</p>
     </div>
   </div>
 </section>
@@ -492,13 +510,6 @@
     <div class="eyebrow"><span class="blot blot-eyebrow" aria-hidden="true"></span>STAY IN TOUCH</div>
     <h2>Never miss a release.</h2>
     <p class="sub">We'll send one email the day a new title publishes. Nothing else.</p>
-
-    <!--
-      BUTTONDOWN SETUP:
-      1. Create a free account at https://buttondown.com
-      2. Replace YOUR-USERNAME below (in the form action AND the onsubmit popup URL) with your Buttondown username.
-      3. Double-check the exact embed snippet in your Buttondown dashboard (Settings → Embedding) in case their markup has changed.
-    -->
     <form action="https://buttondown.com/api/emails/embed-subscribe/ergin"
           method="post"
           target="popupwindow"
@@ -513,6 +524,7 @@
 
 <footer>
   <span class="wordmark-small">Seraphon Publishing</span>
+  <a href="mailto:contact@seraphon.org" style="color: var(--ink-muted); text-decoration: none;">contact@seraphon.org</a><br>
   seraphon.org · © 2026
 </footer>
 
