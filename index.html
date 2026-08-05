@@ -72,6 +72,32 @@
   }
   .blot-eyebrow { width: 9px; height: 10px; margin-right: 9px; vertical-align: middle; }
 
+  /* ---------- Announcement Bar ---------- */
+  .announcement-bar {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    width: 100%;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    z-index: 30;
+    position: relative;
+  }
+  .announcement-img {
+    height: 36px;
+    width: auto;
+    margin-right: 14px;
+    box-shadow: 0 2px 6px rgba(255,255,255,0.15);
+    border-radius: 2px;
+  }
+  .announcement-text {
+    font-weight: 500;
+  }
+
   /* ---------- Header ---------- */
   header {
     position: sticky;
@@ -162,7 +188,7 @@
   /* ---------- Hero ---------- */
   .hero {
     position: relative;
-    padding: 110px 24px 100px;
+    padding: 90px 24px 100px;
     overflow: hidden;
     text-align: center;
   }
@@ -192,11 +218,11 @@
   }
   
   .shift-left {
-    transform: translateX(-40px); /* Sola kaydırma miktarı */
+    transform: translateX(-40px);
   }
   
   .shift-right {
-    transform: translateX(40px); /* Sağa kaydırma miktarı */
+    transform: translateX(40px);
   }
 
   .hero-sub {
@@ -230,70 +256,64 @@
     margin: 0;
   }
 
-  /* ---------- Catalog / TOC list ---------- */
-  .toc-list { list-style: none; margin: 0; padding: 0; }
-  .toc-row {
-    display: flex;
-    align-items: center; /* Görseller için ortalandı */
-    gap: 16px;
-    padding: 26px 0;
-    border-bottom: 1px solid rgba(35, 16, 58, 0.14);
-  }
-  .toc-row:first-child { padding-top: 0; }
-  .toc-num {
-    font-family: var(--font-display);
-    font-style: italic;
-    color: var(--wood-gold);
-    font-size: 1.1rem;
-    width: 34px;
-    flex-shrink: 0;
+  /* ---------- Books Grid (Replaced Catalog) ---------- */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20px;
   }
   
-  /* Kitap kapağı thumbnail stili */
-  .toc-thumb {
-    width: 46px;
-    height: auto;
-    border-radius: 3px;
-    box-shadow: 0 4px 12px rgba(35, 16, 58, 0.18);
-    flex-shrink: 0;
-    display: block;
-  }
-
-  .toc-title-block { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-  .toc-title {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 700;
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
     color: var(--ink);
+    transition: transform 0.3s ease;
+    text-align: center;
   }
-  .toc-author {
+  
+  .book-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .book-card img {
+    width: 220px;
+    height: auto;
+    box-shadow: 0 16px 32px -6px rgba(35, 16, 58, 0.3);
+    margin-bottom: 24px;
+    border-radius: 2px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .book-card:hover img {
+    box-shadow: 0 20px 40px -8px rgba(35, 16, 58, 0.4);
+  }
+  
+  .book-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+  }
+  
+  .book-card .book-author {
     font-family: var(--font-body);
     font-style: italic;
     color: var(--ink-muted);
-    font-size: 0.98rem;
+    font-size: 1rem;
+    margin: 0;
   }
-  .toc-leader {
-    flex: 1;
-    border-bottom: 2px dotted rgba(35, 16, 58, 0.3);
-    margin: 0 4px 6px;
-    min-width: 30px;
-  }
-  .toc-status {
-    font-family: var(--font-ui);
-    font-size: 0.88rem;
-    font-weight: 600;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .toc-status.available { color: var(--violet); }
-  .toc-status.available a { color: var(--violet); text-decoration: none; }
-  .toc-status.available a:hover { text-decoration: underline; }
-  .toc-status.soon { color: var(--ink-muted); font-weight: 500; }
 
-  @media (max-width: 620px) {
-    .toc-row { flex-wrap: wrap; align-items: flex-start; }
-    .toc-leader { display: none; }
-    .toc-title-block { flex-direction: column; gap: 2px; }
+  @media (max-width: 700px) {
+    .books-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
   }
 
   /* ---------- Cover reveal ---------- */
@@ -421,6 +441,12 @@
 </head>
 <body>
 
+<!-- En Üst Duyuru Çubuğu (Announcement Bar) -->
+<div class="announcement-bar">
+  <img src="neuromuscular.jpg" alt="Neuromuscular Rebirth" class="announcement-img">
+  <span class="announcement-text">NEW RELEASE: Neuromuscular Rebirth is now available.</span>
+</div>
+
 <header>
   <div class="nav-inner">
     <a href="#" class="wordmark">
@@ -428,7 +454,7 @@
       <span class="wordmark-lockup">Seraphon<span class="wordmark-sub">Publishing</span></span>
     </a>
     <nav class="links">
-      <a href="#catalog">Catalog</a>
+      <a href="#books">Books</a>
       <a href="#about">About</a>
       <a href="#newsletter">Newsletter</a>
       <a href="mailto:contact@seraphon.org" class="contact-btn">Contact</a>
@@ -445,49 +471,46 @@
       <span class="shift-right">Global Reach.</span>
     </h1>
     <p class="hero-sub">Expand your legacy beyond borders. From world-class translation to flawless formatting, we prepare your masterpiece for global distribution.</p>
-    <a href="#catalog" class="hero-scroll">View the catalog ↓</a>
+    <a href="#books" class="hero-scroll">View the books ↓</a>
   </div>
 </section>
 
 <hr class="divider">
 
-<section id="catalog">
+<!-- Books Bölümü (Izgara Tasarımı) -->
+<section id="books">
   <div class="wrap">
-    <div class="eyebrow"><span class="blot blot-eyebrow" aria-hidden="true"></span>THE CATALOG</div>
-    <h2>Our Latest Books.</h2>
+    <div class="eyebrow"><span class="blot blot-eyebrow" aria-hidden="true"></span>BOOKS</div>
+    
+    <div class="books-grid">
+      <!-- 1. Kitap -->
+      <a href="/neuromuscular-rebirth" class="book-card">
+        <img src="neuromuscular.jpg" alt="Neuromuscular Rebirth">
+        <h3>Neuromuscular Rebirth</h3>
+        <p class="book-author">Dr. Volkan Artun</p>
+      </a>
 
-    <ol class="toc-list">
-      <li class="toc-row">
-        <span class="toc-num">I.</span>
-        <img src="crime.jpg" alt="Crime and Punishment" class="toc-thumb">
-        <div class="toc-title-block">
-          <span class="toc-title">Crime and Punishment</span>
-          <span class="toc-author">Fyodor Dostoevsky</span>
-        </div>
-        <span class="toc-leader" aria-hidden="true"></span>
-        <span class="toc-status available"><a href="https://www.amazon.com/dp/B0H87XKS5S" target="_blank" rel="noopener">Available now →</a></span>
-      </li>
-      <li class="toc-row">
-        <span class="toc-num">II.</span>
-        <img src="ivan.jpg" alt="The Death of Ivan Ilyich" class="toc-thumb">
-        <div class="toc-title-block">
-          <span class="toc-title">The Death of Ivan Ilyich</span>
-          <span class="toc-author">Leo Tolstoy</span>
-        </div>
-        <span class="toc-leader" aria-hidden="true"></span>
-        <span class="toc-status available"><a href="https://www.amazon.com/dp/B0H8JQF55K" target="_blank" rel="noopener">Available now →</a></span>
-      </li>
-      <li class="toc-row">
-        <span class="toc-num">III.</span>
-        <img src="dorian.jpg" alt="The Picture of Dorian Gray" class="toc-thumb">
-        <div class="toc-title-block">
-          <span class="toc-title">The Picture of Dorian Gray</span>
-          <span class="toc-author">Oscar Wilde</span>
-        </div>
-        <span class="toc-leader" aria-hidden="true"></span>
-        <span class="toc-status available"><a href="https://www.amazon.com/dp/B0H9C42Q77" target="_blank" rel="noopener">Available now →</a></span>
-      </li>
-    </ol>
+      <!-- 2. Kitap -->
+      <a href="/secrets-of-psychological-health" class="book-card">
+        <img src="psychology.jpg" alt="Secrets of Psychological Health">
+        <h3>Secrets of Psychological Health</h3>
+        <p class="book-author">Bahattin Hoca</p>
+      </a>
+
+      <!-- 3. Kitap -->
+      <a href="https://www.amazon.com/dp/B0H87XKS5S" target="_blank" rel="noopener" class="book-card">
+        <img src="crime.jpg" alt="Crime and Punishment">
+        <h3>Crime and Punishment</h3>
+        <p class="book-author">Fyodor Dostoevsky</p>
+      </a>
+
+      <!-- 4. Kitap -->
+      <a href="https://www.amazon.com/dp/B0H8JQF55K" target="_blank" rel="noopener" class="book-card">
+        <img src="ivan.jpg" alt="The Death of Ivan Ilyich">
+        <h3>The Death of Ivan Ilyich</h3>
+        <p class="book-author">Leo Tolstoy</p>
+      </a>
+    </div>
   </div>
 </section>
 
