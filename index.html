@@ -284,18 +284,18 @@
     transform: translateY(-8px);
   }
   
-  /* Rozet İçin Yeni Eklenen Wrapper Sınıfı */
+  /* Rozet İçin Wrapper Sınıfı */
   .cover-wrap {
     position: relative;
     display: inline-block;
   }
 
-  /* Rozet Stilleri */
+  /* Rozet Stilleri - Büyütüldü ve Sola Alındı */
   .book-card img.new-badge {
     position: absolute;
-    top: -18px;
-    right: -18px;
-    width: 75px;
+    top: -24px;
+    left: -28px;
+    width: 110px; /* Okunabilmesi için boyut büyütüldü */
     height: auto;
     box-shadow: none;
     margin-bottom: 0;
@@ -304,10 +304,10 @@
     transition: transform 0.3s ease;
   }
 
-  /* Kitaba gelince rozetin yapacağı animasyon */
+  /* Kitaba gelince rozetin sol tarafta yapacağı animasyon */
   .book-card:hover img.new-badge {
     box-shadow: none;
-    transform: scale(1.1) rotate(8deg);
+    transform: scale(1.08) rotate(-6deg);
   }
 
   .book-card img {
