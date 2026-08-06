@@ -284,6 +284,32 @@
     transform: translateY(-8px);
   }
   
+  /* Rozet İçin Yeni Eklenen Wrapper Sınıfı */
+  .cover-wrap {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Rozet Stilleri */
+  .book-card img.new-badge {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 75px;
+    height: auto;
+    box-shadow: none;
+    margin-bottom: 0;
+    border-radius: 0;
+    z-index: 10;
+    transition: transform 0.3s ease;
+  }
+
+  /* Kitaba gelince rozetin yapacağı animasyon */
+  .book-card:hover img.new-badge {
+    box-shadow: none;
+    transform: scale(1.1) rotate(8deg);
+  }
+
   .book-card img {
     width: 220px;
     height: auto;
@@ -487,9 +513,12 @@
     <div class="eyebrow"><span class="blot blot-eyebrow" aria-hidden="true"></span>BOOKS</div>
     
     <div class="books-grid">
-      <!-- 1. Kitap -->
+      <!-- 1. Kitap (Rozetli) -->
       <a href="https://www.amazon.com/dp/B0HD2R3VT6" class="book-card">
-        <img src="neuromuscular.jpg" alt="Neuromuscular Rebirth">
+        <div class="cover-wrap">
+          <img src="new_rozet.png" class="new-badge" alt="New Release Badge">
+          <img src="neuromuscular.jpg" alt="Neuromuscular Rebirth">
+        </div>
         <h3>Neuromuscular Rebirth</h3>
         <p class="book-author">Dr. Volkan Artun</p>
       </a>
