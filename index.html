@@ -10,6 +10,7 @@
 <meta property="og:description" content="Your Words, Global Reach.">
 <meta property="og:type" content="website">
 
+<!-- Favicon (Sekme İkonu) eski logo olarak kalabilir, küçük alanda daha iyi durur -->
 <link rel="icon" type="image/png" href="seraphon-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,28 +121,12 @@
   .wordmark {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-family: var(--font-wordmark);
-    font-size: 1.15rem;
-    letter-spacing: 0.02em;
-    color: var(--ink);
     text-decoration: none;
-    font-weight: 400;
   }
   .wordmark .logo-mark {
-    height: 32px;
+    height: 45px; /* Yeni logo için yüksekliği artırdık */
     width: auto;
     display: block;
-  }
-  .wordmark-lockup { display: flex; flex-direction: column; line-height: 1.1; }
-  .wordmark-sub {
-    font-family: var(--font-ui);
-    font-size: 0.5rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--violet);
-    margin-top: 3px;
   }
   nav.links {
     display: flex;
@@ -480,8 +465,7 @@
 <header>
   <div class="nav-inner">
     <a href="#" class="wordmark">
-      <img src="seraphon-logo.png" class="logo-mark" alt="Seraphon Publishing">
-      <span class="wordmark-lockup">Seraphon<span class="wordmark-sub">Publishing</span></span>
+      <img src="seraphon.png" class="logo-mark" alt="Seraphon Publishing">
     </a>
     <nav class="links">
       <a href="#books">Books</a>
