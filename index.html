@@ -10,7 +10,6 @@
 <meta property="og:description" content="Your Words, Global Reach.">
 <meta property="og:type" content="website">
 
-<!-- Favicon (Sekme İkonu) eski logo olarak kalabilir, küçük alanda daha iyi durur -->
 <link rel="icon" type="image/png" href="seraphon-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,7 +115,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 24px;
+    padding: 10px 24px; /* Üst/alt boşluk 18px'ten 10px'e düşürüldü */
   }
   .wordmark {
     display: flex;
@@ -124,7 +123,7 @@
     text-decoration: none;
   }
   .wordmark .logo-mark {
-    height: 85px; /* Üstteki logonun boyutu artırıldı */
+    height: 60px; /* Üstteki logonun boyutu ideal kalınlık için 60px'e ayarlandı */
     width: auto;
     display: block;
   }
@@ -275,7 +274,7 @@
     display: inline-block;
   }
 
-  /* Rozet Stilleri - Boyutu Büyütüldü ve Dışa Çekildi */
+  /* Rozet Stilleri */
   .book-card img.new-badge {
     position: absolute;
     top: -55px;
@@ -444,7 +443,7 @@
     color: var(--ink-muted);
   }
   
-  /* En alttaki logonun boyutlandırması ve ortalanması */
+  /* En alttaki logonun boyutlandırması ve ortalanması bozulmadan kaldı */
   footer .footer-logo {
     height: 90px;
     width: auto;
@@ -579,7 +578,6 @@
 </section>
 
 <footer>
-  <!-- En alt kısımdaki yazı yerine logo eklendi -->
   <img src="seraphon.png" class="footer-logo" alt="Seraphon Publishing">
   <a href="mailto:contact@seraphon.org" style="color: var(--ink-muted); text-decoration: none;">contact@seraphon.org</a><br>
   seraphon.org · © 2026
