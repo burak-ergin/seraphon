@@ -124,7 +124,7 @@
     text-decoration: none;
   }
   .wordmark .logo-mark {
-    height: 45px; /* Yeni logo için yüksekliği artırdık */
+    height: 85px; /* Üstteki logonun boyutu artırıldı */
     width: auto;
     display: block;
   }
@@ -443,14 +443,13 @@
     font-size: 0.85rem;
     color: var(--ink-muted);
   }
-  footer .wordmark-small {
-    font-family: var(--font-wordmark);
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    color: var(--ink);
+  
+  /* En alttaki logonun boyutlandırması ve ortalanması */
+  footer .footer-logo {
+    height: 90px;
+    width: auto;
     display: block;
-    margin-bottom: 6px;
-    font-size: 1rem;
+    margin: 0 auto 16px auto;
   }
 </style>
 </head>
@@ -580,7 +579,8 @@
 </section>
 
 <footer>
-  <span class="wordmark-small">Seraphon Publishing</span>
+  <!-- En alt kısımdaki yazı yerine logo eklendi -->
+  <img src="seraphon.png" class="footer-logo" alt="Seraphon Publishing">
   <a href="mailto:contact@seraphon.org" style="color: var(--ink-muted); text-decoration: none;">contact@seraphon.org</a><br>
   seraphon.org · © 2026
 </footer>
